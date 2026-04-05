@@ -13,31 +13,34 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #0f172a;
-            --accent: #06b6d4;
-            --text: #0f172a;
-            --text-light: #64748b;
-            --bg: #f8fafc;
-            --border: #e2e8f0;
-            --success: #10b981;
+            --primary: #38bdf8;
+            --primary-dark: #0ea5e9;
+            --secondary: #020617;
+            --accent: #8b5cf6;
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --bg: #020617;
+            --surface: #0f172a;
+            --surface-2: #111827;
+            --border: #1e293b;
+            --success: #22c55e;
         }
 
         html, body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text);
+            color: var(--text-light);
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
         body {
-            background: var(--bg);
+            background: radial-gradient(circle at top, #0f172a 0%, #020617 55%);
         }
 
         /* Navigation */
         nav {
-            background: white;
+            background: rgba(2,6,23,0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -85,7 +88,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #111827 40%, #1d4ed8 100%);
             color: white;
             padding: 5rem 1rem;
             text-align: center;
@@ -127,7 +130,7 @@
         }
 
         .btn-primary {
-            background: white;
+            background: var(--surface);
             color: var(--primary);
         }
 
@@ -137,13 +140,13 @@
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.2);
+            background: transparent;
             color: white;
-            border: 2px solid white;
+            border: 1px solid rgba(255,255,255,0.35);
         }
 
         .btn-secondary:hover {
-            background: white;
+            background: var(--surface);
             color: var(--primary);
         }
 
@@ -162,12 +165,12 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 3rem;
-            color: var(--secondary);
+            color: var(--text);
         }
 
         /* About Section */
         .about {
-            background: white;
+            background: transparent;
         }
 
         .about-content {
@@ -193,7 +196,7 @@
 
         .stat {
             padding: 1.5rem;
-            background: var(--bg);
+            background: var(--surface-2);
             border-radius: 8px;
             border-left: 4px solid var(--primary);
         }
@@ -218,7 +221,7 @@
 
         /* Projects Section */
         .projects {
-            background: var(--bg);
+            background: var(--surface-2);
         }
 
         .projects-grid {
@@ -228,7 +231,7 @@
         }
 
         .project-card {
-            background: white;
+            background: var(--surface);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s;
@@ -241,7 +244,7 @@
         }
 
         .project-header {
-            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
             color: white;
             padding: 2rem;
             font-size: 2rem;
@@ -255,7 +258,7 @@
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            color: var(--secondary);
+            color: var(--text);
         }
 
         .project-company {
@@ -277,7 +280,7 @@
         }
 
         .tag {
-            background: var(--bg);
+            background: var(--surface-2);
             color: var(--primary);
             padding: 0.4rem 0.8rem;
             border-radius: 20px;
@@ -287,7 +290,7 @@
 
         /* Skills Section */
         .skills {
-            background: white;
+            background: var(--surface);
         }
 
         .skills-grid {
@@ -298,7 +301,7 @@
 
         .skill-category {
             padding: 2rem;
-            background: var(--bg);
+            background: var(--surface-2);
             border-radius: 8px;
             border-top: 4px solid var(--primary);
         }
@@ -306,7 +309,7 @@
         .skill-category h3 {
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: var(--text);
         }
 
         .skill-list {
@@ -329,7 +332,7 @@
 
         /* Timeline */
         .experience {
-            background: var(--bg);
+            background: var(--surface-2);
         }
 
         .timeline {
@@ -348,7 +351,7 @@
         }
 
         .timeline-item {
-            background: white;
+            background: var(--surface);
             padding: 2rem;
             margin-bottom: 2rem;
             border-radius: 8px;
@@ -378,7 +381,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             margin: 0.5rem 0;
-            color: var(--secondary);
+            color: var(--text);
         }
 
         .timeline-company {
@@ -393,7 +396,7 @@
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 45%, #7c3aed 100%);
             color: white;
             text-align: center;
         }
@@ -417,7 +420,7 @@
         }
 
         .contact-btn {
-            background: white;
+            background: var(--surface);
             color: var(--primary);
             padding: 0.85rem 2rem;
             border-radius: 6px;

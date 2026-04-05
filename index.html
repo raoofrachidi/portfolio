@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raoof Rachidi - Lead Developer | Backend, Cloud & Architecture</title>
+    <meta name="description" content="Lead Developer spécialisé en Python, FastAPI, architecture backend et cloud. +4 ans d'expérience en cybersécurité et SaaS.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #0f172a;
+            --accent: #06b6d4;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            padding: 4rem 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--secondary);
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            padding: 1.5rem;
+            background: var(--bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            color: white;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .project-company {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--bg);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            padding: 2rem;
+            background: var(--bg);
+            border-radius: 8px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        /* Timeline */
+        .experience {
+            background: var(--bg);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -3.3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: var(--secondary);
+        }
+
+        .timeline-company {
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            background: white;
+            color: var(--primary);
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .section {
+                padding: 2.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Raoof</div>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Lead Developer</h1>
+            <p class="subtitle">Backend, Cloud & Architecture Logicielle</p>
+            <p style="margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">+4 ans d'expérience en développement full-stack. Spécialisé en Python, FastAPI et infrastructure cloud.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Commençons →</a>
+                <a href="#projects" class="btn btn-secondary">Voir mes projets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">À propos</h2>
+            <div class="about-content">
+                <div>
+                    <p><strong>Bienvenue !</strong> Je suis Raoof Rachidi, Lead Developer spécialisé en backend et architecture logicielle.</p>
+                    <p>Avec <strong>+4 ans d'expérience</strong> professionnelle, j'ai travaillé sur des projets exigeants en <strong>cybersécurité</strong> (Lyon, France) et des <strong>services cloud scalables</strong> (Montréal, Canada).</p>
+                    <p>Mon expertise couvre l'ensemble du cycle produit : <strong>conception</strong> → <strong>développement</strong> → <strong>déploiement</strong> → <strong>leadership technique</strong>.</p>
+                    <p>Je suis passionné par les architectures robustes, les pipelines CI/CD fluides, et le mentoring d'équipes.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Ans d'expérience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Pays (France, Canada)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Passion pour le code</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1 an</div>
+                        <div class="stat-label">Pour devenir Lead</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projets Clés</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">🔒</div>
+                    <div class="project-body">
+                        <div class="project-title">Plateforme de Cybersécurité</div>
+                        <div class="project-company">Tenacy (Lyon, France) • 2021-2023</div>
+                        <p class="project-description">Conception et développement full-stack d'une application SaaS de cybersécurité. Architecture backend en Python, frontend en VueJS. Intégration des connecteurs Microsoft 365 et Google Workspace.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">VueJS</span>
+                            <span class="tag">Cybersécurité</span>
+                            <span class="tag">API Tierces</span>
+                            <span class="tag">Scrum</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">☁️</div>
+                    <div class="project-body">
+                        <div class="project-title">Services de Données Cloud</div>
+                        <div class="project-company">Glassroom (Montréal, Canada) • 2024-2025</div>
+                        <p class="project-description">Développement backend Python et gestion complète d'infrastructures cloud. Optimisation de services de données à grande échelle. Rédaction de spécifications techniques et revues de code.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Cloud</span>
+                            <span class="tag">Performance</span>
+                            <span class="tag">Infrastructure</span>
+                            <span class="tag">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">👥</div>
+                    <div class="project-body">
+                        <div class="project-title">Leadership Technique</div>
+                        <div class="project-company">Glassroom (Montréal, Canada) • 2025</div>
+                        <p class="project-description">Promotion Lead Developer. Encadrement technique d'une équipe de développeurs. Conception d'architectures backend. Mise en place de pipelines CI/CD. Accélération du cycle de livraison.</p>
+                        <div class="project-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Architecture</span>
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">Mentoring</span>
+                            <span class="tag">Agile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul class="skill-list">
+                        <li>Python (expert)</li>
+                        <li>FastAPI / Django / Flask</li>
+                        <li>REST APIs & Microservices</li>
+                        <li>C++, R, Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul class="skill-list">
+                        <li>VueJS / Angular</li>
+                        <li>JavaScript / HTML5 / CSS3</li>
+                        <li>NodeJS</li>
+                        <li>UX/UI Collaboration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Cloud</h3>
+                    <ul class="skill-list">
+                        <li>Docker & Docker Compose</li>
+                        <li>CircleCI / CI-CD Pipelines</li>
+                        <li>Infrastructure Cloud</li>
+                        <li>Ansible, Sonar</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Architecture</h3>
+                    <ul class="skill-list">
+                        <li>Data Science (CentraleSupélec)</li>
+                        <li>Machine Learning</li>
+                        <li>Architecture Logicielle</li>
+                        <li>Design Patterns</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Méthodologie</h3>
+                    <ul class="skill-list">
+                        <li>Scrum / Agile</li>
+                        <li>Code Reviews</li>
+                        <li>Jira & Git</li>
+                        <li>Communication Technique</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Langues</h3>
+                    <ul class="skill-list">
+                        <li>Français (natif)</li>
+                        <li>Anglais (courant)</li>
+                        <li>Communication interculturelle</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Parcours Professionnel</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Avril 2025 – Aujourd'hui</div>
+                    <div class="timeline-title">Lead Developer</div>
+                    <div class="timeline-company">Glassroom, Montréal (Québec)</div>
+                    <div class="timeline-description">
+                        Encadrement technique de projets web. Supervision architecture backend et déploiement cloud. Revues de code et mentoring d'équipe. Mise en place de pipelines CI/CD pour fluidifier les livraisons.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Février 2024 – Mars 2025</div>
+                    <div class="timeline-title">Développeur Backend & Données Cloud</div>
+                    <div class="timeline-company">Glassroom, Montréal (Québec)</div>
+                    <div class="timeline-description">
+                        Développement backend Python et gestion d'infrastructures cloud. Optimisation de services de données infonuagiques. Maintenance, débogage et amélioration des performances applicatives. Spécifications techniques et revues de code.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Février 2021 – Septembre 2023</div>
+                    <div class="timeline-title">Développeur Full-Stack</div>
+                    <div class="timeline-company">Tenacy, Lyon (France)</div>
+                    <div class="timeline-description">
+                        Conception application cybersécurité en Python et VueJS. Intégration connecteurs externes (Microsoft 365, Google Workspace). Refonte architectures logicielles. Gestion de bugs critiques. Collaboration Agile avec Jira et équipe UX.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 – 2022</div>
+                    <div class="timeline-title">Data Scientist (Certification)</div>
+                    <div class="timeline-company">CentraleSupélec × OpenClassrooms</div>
+                    <div class="timeline-description">
+                        Maîtrise en Data Science. Spécialisation machine learning et analyse de données. Double compétence dev + data scientist.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2>Prêt à collaborer ?</h2>
+            <p>Je propose des prestations de consulting, développement backend et architecture logicielle.<br/>Clients français et internationaux bienvenue.</p>
+            <div class="contact-buttons">
+                <a href="mailto:raoof976@gmail.com" class="contact-btn">✉️ Email</a>
+                <a href="tel:+14384700215" class="contact-btn">📞 Téléphone</a>
+                <a href="https://linkedin.com/in/raoof-rachidi" class="contact-btn" target="_blank">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Raoof Rachidi. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

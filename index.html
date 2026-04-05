@@ -34,7 +34,11 @@
         }
 
         body {
-            background: radial-gradient(circle at top, #0f172a 0%, #020617 55%);
+            background:
+                radial-gradient(circle at top, rgba(56,189,248,0.10) 0%, transparent 25%),
+                radial-gradient(circle at 80% 20%, rgba(139,92,246,0.10) 0%, transparent 25%),
+                linear-gradient(180deg, #020617 0%, #0b1120 100%);
+            position: relative;
         }
 
         /* Navigation */
@@ -165,7 +169,8 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 3rem;
-            color: var(--text);
+            color: #f8fafc;
+            letter-spacing: -0.02em;
         }
 
         /* About Section */
@@ -231,7 +236,7 @@
         }
 
         .project-card {
-            background: var(--surface);
+            background: linear-gradient(180deg, rgba(15,23,42,0.98) 0%, rgba(17,24,39,0.98) 100%);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s;
@@ -252,6 +257,25 @@
 
         .project-body {
             padding: 2rem;
+        }
+
+        .project-title, .skill-category h3, .timeline-title, .contact h2, .about strong, .timeline-item strong {
+            color: #f8fafc;
+        }
+
+        .project-card:hover, .skill-category:hover, .timeline-item:hover, .stat:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(2,6,23,0.45);
+        }
+
+        .project-card, .skill-category, .timeline-item, .stat {
+            transition: all 0.25s ease;
+        }
+
+        .tag {
+            background: rgba(56,189,248,0.10);
+            color: #7dd3fc;
+            border: 1px solid rgba(56,189,248,0.12);
         }
 
         .project-title {
@@ -301,9 +325,11 @@
 
         .skill-category {
             padding: 2rem;
-            background: var(--surface-2);
-            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(17,24,39,0.95) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(56,189,248,0.12);
             border-top: 4px solid var(--primary);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.22);
         }
 
         .skill-category h3 {
@@ -444,18 +470,18 @@
             margin-top: 2rem;
         }
         .contact-form {
-            background: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.06);
             padding: 1.5rem;
             border-radius: 12px;
             text-align: left;
         }
         .contact-form label { display:block; margin-bottom:0.5rem; font-weight:600; }
         .contact-form input, .contact-form textarea {
-            width:100%; padding:0.85rem 1rem; margin-bottom:1rem; border:none; border-radius:8px; font: inherit;
+            width:100%; padding:0.85rem 1rem; margin-bottom:1rem; border:1px solid rgba(255,255,255,0.08); border-radius:8px; font: inherit; background: rgba(2,6,23,0.65); color: #f8fafc;
         }
         .contact-form textarea { min-height: 140px; resize: vertical; }
         .contact-form button {
-            width:100%; background:white; color: var(--primary); padding:0.9rem 1rem; border:none; border-radius:8px; font-weight:700; cursor:pointer;
+            width:100%; background: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 100%); color: white; padding:0.9rem 1rem; border:none; border-radius:8px; font-weight:700; cursor:pointer;
         }
         .contact-note { opacity:0.9; font-size:0.95rem; margin-top:0.75rem; }
         @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
@@ -608,7 +634,7 @@
     </section>
 
     <!-- Services -->
-    <section class="section" id="services" style="background: #eef4ff;">
+    <section class="section" id="services" style="background: linear-gradient(180deg, rgba(8,15,30,0.92) 0%, rgba(10,20,40,0.96) 100%); border-top: 1px solid rgba(56,189,248,0.08); border-bottom: 1px solid rgba(56,189,248,0.08);">
         <div class="container">
             <h2 class="section-title">Services</h2>
             <div class="skills-grid">

@@ -764,13 +764,14 @@
                     </div>
                     <p class="contact-note">Réponse rapide par email pour les demandes sérieuses de mission, collaboration ou accompagnement technique.</p>
                 </div>
-                <form class="contact-form" action="mailto:raoof976@gmail.com" method="post" enctype="text/plain">
+                <form class="contact-form" action="https://formspree.io/f/xjgpjbna" method="POST">
                     <label for="name">Nom</label>
                     <input id="name" name="Nom" type="text" placeholder="Ton nom" required>
                     <label for="email">Email</label>
-                    <input id="email" name="Email" type="email" placeholder="ton@email.com" required>
+                    <input id="email" name="email" type="email" placeholder="ton@email.com" required>
                     <label for="message">Message</label>
-                    <textarea id="message" name="Message" placeholder="Décris rapidement ton besoin" required></textarea>
+                    <textarea id="message" name="message" placeholder="Décris rapidement ton besoin" required></textarea>
+                    <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio de Raoof">
                     <button type="submit">Envoyer la demande</button>
                 </form>
             </div>

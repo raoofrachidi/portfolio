@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raoof Rachidi - Lead Developer | Full-stack, Architecture & Cloud</title>
-    <meta name="description" content="Lead Developer spécialisé en Python, FastAPI, architecture backend et cloud. +4 ans d'expérience en cybersécurité et SaaS.">
+    <meta name="description" content="Lead Developer full-stack orienté architecture logicielle, cloud et modernisation d’applications web. +4 ans d’expérience en SaaS, cybersécurité et delivery technique.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -27,7 +30,7 @@
         }
 
         html, body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--text-light);
             line-height: 1.6;
             scroll-behavior: smooth;
@@ -104,15 +107,18 @@
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 0.5rem;
+            font-size: clamp(2.4rem, 5vw, 4.4rem);
+            margin-bottom: 0.75rem;
             font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
         }
 
         .hero .subtitle {
             font-size: 1.2rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
+            opacity: 0.92;
+            margin-bottom: 1.25rem;
+            color: #cbd5e1;
         }
 
         .hero-cta {
@@ -162,7 +168,7 @@
         }
 
         .section {
-            padding: 4rem 1rem;
+            padding: 5rem 1rem;
         }
 
         .section-title {
@@ -270,6 +276,22 @@
 
         .project-card, .skill-category, .timeline-item, .stat {
             transition: all 0.25s ease;
+        }
+
+        .hero p, .about-text p, .project-description, .timeline-description {
+            max-width: 68ch;
+        }
+
+        .nav-logo {
+            letter-spacing: -0.03em;
+        }
+
+        .contact h2 {
+            letter-spacing: -0.03em;
+        }
+
+        .btn, .contact-btn, .contact-form button {
+            box-shadow: 0 8px 24px rgba(2,6,23,0.18);
         }
 
         .tag {
@@ -533,7 +555,8 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-container">
+        <div style="position:absolute; inset:0; pointer-events:none; background-image: linear-gradient(rgba(56,189,248,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.06) 1px, transparent 1px); background-size: 36px 36px; mask-image: radial-gradient(circle at center, black 30%, transparent 85%);"></div>
+        <div class="hero-container" style="position:relative; z-index:1;">
             <h1>Lead Developer</h1>
             <p class="subtitle">Développement web full-stack, architecture logicielle & cloud</p>
             <p style="margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.9;">J’aide les entreprises à concevoir, faire évoluer et stabiliser leurs applications web, du développement à la mise en production.</p>

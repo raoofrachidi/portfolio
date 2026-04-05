@@ -432,6 +432,31 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
+        
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        .contact-form {
+            background: rgba(255,255,255,0.12);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .contact-form label { display:block; margin-bottom:0.5rem; font-weight:600; }
+        .contact-form input, .contact-form textarea {
+            width:100%; padding:0.85rem 1rem; margin-bottom:1rem; border:none; border-radius:8px; font: inherit;
+        }
+        .contact-form textarea { min-height: 140px; resize: vertical; }
+        .contact-form button {
+            width:100%; background:white; color: var(--primary); padding:0.9rem 1rem; border:none; border-radius:8px; font-weight:700; cursor:pointer;
+        }
+        .contact-note { opacity:0.9; font-size:0.95rem; margin-top:0.75rem; }
+        @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
+
         /* Footer */
         footer {
             background: var(--secondary);
@@ -727,13 +752,27 @@
     <!-- Contact -->
     <section class="contact section" id="contact">
         <div class="container">
-            <h2>Prêt à collaborer ?</h2>
-            <p>Je propose des prestations de consulting, développement backend et architecture logicielle.<br/>Clients français et internationaux bienvenue.</p>
-            <div class="contact-buttons">
-                <a href="./CV_Raoof_Rachidi.pdf" class="contact-btn" target="_blank">📄 Télécharger le CV</a>
-                <a href="mailto:raoof976@gmail.com" class="contact-btn">✉️ Email</a>
-                <a href="tel:+14384700215" class="contact-btn">📞 Téléphone</a>
-                <a href="https://www.linkedin.com/in/raoofrachidi" class="contact-btn" target="_blank">💼 LinkedIn</a>
+            <h2>Parlons de ton projet</h2>
+            <p>Besoin d’un renfort sur un produit web, une refonte technique ou une architecture backend ?<br/>Tu peux me contacter directement ou m’envoyer un message via le formulaire.</p>
+            <div class="contact-layout">
+                <div>
+                    <div class="contact-buttons" style="justify-content:flex-start;">
+                        <a href="./CV_Raoof_Rachidi.pdf" class="contact-btn" target="_blank">📄 Télécharger le CV</a>
+                        <a href="mailto:raoof976@gmail.com" class="contact-btn">✉️ Email</a>
+                        <a href="tel:+14384700215" class="contact-btn">📞 Téléphone</a>
+                        <a href="https://www.linkedin.com/in/raoofrachidi" class="contact-btn" target="_blank">💼 LinkedIn</a>
+                    </div>
+                    <p class="contact-note">Réponse rapide par email pour les demandes sérieuses de mission, collaboration ou accompagnement technique.</p>
+                </div>
+                <form class="contact-form" action="mailto:raoof976@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Nom</label>
+                    <input id="name" name="Nom" type="text" placeholder="Ton nom" required>
+                    <label for="email">Email</label>
+                    <input id="email" name="Email" type="email" placeholder="ton@email.com" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" placeholder="Décris rapidement ton besoin" required></textarea>
+                    <button type="submit">Envoyer la demande</button>
+                </form>
             </div>
         </div>
     </section>
